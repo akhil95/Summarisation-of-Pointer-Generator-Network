@@ -1,0 +1,160 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hypertext Summarization for Hotel Review
+
+Minh Tien,  François  Portet, Cyril Labbé
+
+
+
+
+
+To  cite  this  version:
+
+Minh Tien, François Portet, Cyril Labbé.  Hypertext Summarization for Hotel Review.  1. Introduction
+2. SuRe system 3. Result  and Evaluation 4. Discussion.  2015. <hal-01153598>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HAL  Id:  hal-01153598 https://hal.archives-ouvertes.fr/hal-01153598
+Submitted on 20 May 2015
+
+
+
+
+
+HAL    is   a   multi-disciplinary  open   access archive  for the  deposit  and  dissemination of sci- entific research documents, whether  they are pub- lished or not.   The documents  may come from teaching   and  research  institutions in  France   or abroad,  or from public or private  research centers.
+
+L’archive ouverte  pluridisciplinaire HAL,  est destinée  au dépôt  et à la diffusion de documents scientifiques  de niveau  recherche,  publiés  ou non, émanant des établissements d’enseignement et de recherche  français  ou étrangers, des laboratoires publics ou privés.
+Hypertext Summarization for Hotel Review
+
+
+First Author Nguyen Minh Tien Laboratoire d’Informatique
+de Grenoble - e´quipe SIGMA
+minh-tien.nguyen@imag.fr
+
+Second Author Franc¸ois Portet Laboratoire d’Informatique
+de Grenoble - e´quipe GETALP
+francois.portet@imag.fr
+
+Third  Author
+Cyril Labbe´
+Laboratoire d’Informatique de Grenoble - e´quipe SIGMA cyril.labbe@imag.fr
+
+
+
+Abstract
+
+
+Nowadays, there is a huge amount of online reviews for almost every product and service.  These reviews have largely contributed to the growth of e-commerce; however in place of a human, extracting related information from this mass of re- views in order to create an easy to under- stand summarization is not a trivial matter. In this study, we present the SuRe system to produce a textual summarization from hotel free-text reviews as well as a prelim- inary evaluation.
+
+
+1   Introduction
+
+Nowadays, there is a huge amount of customer re- views available online for almost every product and service.  Commonly they are in the form of a short free-text, which contains not only general comments but also highly personal opinions or cir- cumstances. It would be a very valuable source of information for both the customers and the pro- ducers if we could be able to extract related in- formation from this large amount of review and present them in an efficient manner.
+There have been different approaches in this field of research such as those purely based on fre- quency  (Rotem, retrieved may 2014) or discover the overall polarity of a document   (Sebastiani et al., 2006).  Some tried to tackle with abstrac- tion/natural language generation   (Portet et al.,
+2007); however the abstractive summarize field of research is still quite weak and very open for re- search.  Therefore we propose our SuRe system based on a pilot research by (Labbe´ and Portet,
+2012). It not only extracts data from a set of text but also abstractively reforms those data to a tex- tual output i.e.  SuRe decides by itself ”What to say?” and ”How to say it?”.
+
+2   SuRe System
+
+2.1   Architecture
+A simple architecture for SuRe system can be vi- sualized as several steps as seen in Figure 1 .
+
+
+
+Figure 1: Overall Architecture of the SuRe system
+
+
+2.2   Opinion Analysis
+We consider a product to be composed of different features and these features are described by var- ious opinions mentioned in the free-text reviews. Thus this step intents to extract as much relevant opinions as possible from the source.   First the system extract words referencing features thanks to a pre-defined dictionary/ontology; then opin- ion tokens about these features are extracted using two different methods with slightly different archi- tectures namely Sliding window and Dependency tree.
+To account for the many synonyms; these opin- ions were then aggregated using WordNet rela- tions between adjective synsets.
+At the end of this step, the flowing data structure is obtained: F eature-N ame  =< Aggregated- Op1, Aggregated-Op2, ..., Aggregated-Opn  >
+Where in turn each Aggregated-Op has a gen-
+eral number of times that opinion has been men- tioned along with a detail list of information for
+each time it was mentioned (from which review, which sentence and what is the polarity).
+
+2.3   Document Planning / Micro Planning
+
+In this research we chose to separate features into positive or negative based on the most frequent opinion that linked to it. SuRe also tries to make a decision if the feature should be described us- ing more than one opinion and in that case what should the conjunction be.  Next step was to de- cide which would be the reference expression of the sentence (e.g that feature was mentioned by how many people) and how should they be refer- enced to.
+
+2.4   Surface Realization
+
+From the planning that has been made in the pre- vious step; a tree structure for each feature is ob- tained.  they are used to create a phrase for the feature by employ Simple NLG (Gatt and Reiter,
+2009); then these phrases are grouped up using reference expressions to create sentences.
+We chose to make the output as a small hyper- text body code in order to be able to represent it better(with bold text, extra information in form of a pop-up box) as seen in Figure 2.
+
+
+
+Figure 2: SuRe output example
+
+
+
+3   Result and Evaluation
+
+SuRe project has been implemented in Java and the output has been evaluated in order to give a complete assessment for the project.  We closely assessed different aspects of two opinion analysis approaches(reliability, run-time, output). Later on we carried out a survey to collect people prefer- ences between different type of presentations and linguistic quality of SuRe system base on the us- ing a set of characteristic that were defined for the Document understanding conference (Baten and Dang, 2007) at NIST and presented in Figure 3.
+
+
+
+
+
+
+
+
+
+Figure 3: linguistic qualities the output
+
+
+4   Discussion
+
+SuRe system has been proven to be able to handle a large set of reviews to create a short, informative and easy to understand summary in an abstractive manner that is close to the way human process. However there are still problems with SuRe sys- tem that need to be taken in to consideration for future development such as:
+
+• Aggregation can be filtered even more by dif- ferent criteria to create even more concen- trated summary; e.g.  based on temporal in- formation or by age, place, sex, etc.
+
+• A clear word sense disambiguation before aggregation instead of blindly select similar words from WordNet.
+
+• Referencing resolution would also enhance the opinion analysis step since in written re- view, people often use reference as ”they” or
+”it” instead of remark again the feature, as well as double negation or even sarcasm.
+
+
+
+References
+
+Nicole Baten and Hoa Dang. 2007. Document under- standing conferences.
+Albert Gatt and Ehud Reiter. 2009. Simplenlg: A re- alisation engine for practical applications.  In Pro- ceedings of the 12th European Workshop on Natu- ral Language Generation, ENLG ’09, pages 90–93, Stroudsburg, PA, USA. Association for Computa- tional Linguistics.
+
+Cyril Labbe´ and Franc¸ois Portet.  2012.  Towards an Abstractive Opinion Summarisation of Multiple Re- views in the Tourism Domain.  In The First Inter- national Workshop on Sentiment Discovery from Af- fective Data  (SDAD 2012), pages 87–94, Bristol, Royaume-Uni.
+
+Franc¸ois Portet, Ehud Reiter, Jim Hunter, and Somaya- julu Sripada.  2007.  Automatic generation of tex- tual summaries from neonatal intensive care data. In In Proccedings of the 11th Conference on Artificial Intelligence in Medicine (AIME 07). LNCS, pages
+227–236.
+
+Nadav Rotem. retrieved may 2014. Open text summa- rizer (ots) - http://libots.sourceforge.net.
+
+Fabrizio Sebastiani, Andrea Esuli, and Fabrizio Se- bastiani.  2006.  Determining term subjectivity and term orientation for opinion mining. In In Proceed- ings of the 11th Conference of the European Chap- ter of the Association for Computational Linguistics (EACL06, pages 193–200.

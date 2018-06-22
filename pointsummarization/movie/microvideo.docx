@@ -1,0 +1,87 @@
+A Micro-video Recommendation System Based on Big Data
+Abstract:
+With the development of the Internet and social networking service, the micro-video is becoming more popular, especially for younger’s. However, for many users, they spend a lot of time to get their favorite micro-videos from amounts videos on the Internet; for the micro-video producers, they do not know what kinds of viewers like their products. Therefore, this paper proposes a micro-video recommendation system. The recommendation algorithms are the core of this system. Traditional recommendation algorithms include content-based recommendation, collaboration recommendation algorithms, and so on. At the Big Data times, the challenges what we meet are data scale, performance of computing, and other aspects. Thus, this paper improves the traditional recommendation algorithms, using the popular parallel computing framework to process the
+Big Data. Slope one recommendation algorithm is a parallel computing algorithm based on MapReduce and Hadoop framework which is a high performance parallel computing platform. The other aspect of this system is data visualization.
+Only an intuitive, accurate visualization interface, the viewers and producers can find what they need through the micro-video recommendation system.
+
+
+
+
+
+
+Introduction:
+Micro-video is a new form of information media. With the development of the Internet, 3G (the 3rd Generation mobile communication technology), and 4G (the 4th Generation mobile communication technology) network, the bandwidth
+and speed of network become faster and faster. These technologies provide conditions for dissemination of information media. Micro-video is a short time video [1] [2], which lasts for 30 seconds to 300 seconds. The short time micro-videos are popular with young people, because the teenagers are prefer to watch the micro-vide on their confetti time through mobile devices. For micro-video producers, the problem is they do not know how many people like their
+products, and do not know how many times their video have been watched. Therefore, this paper proposes a micro-video recommendation system (MRS). One of the purposes of MRS is an overview of micro-videos for the producer. In this way, the producer knows how many users love their video, and howmany times their videos are on-demand. Another purpose of MRS is for users. The system can analyze the users’ favorites and watching history, automatically push appropriate video to the users.Big Data is becoming more popular with the internet
+technology development, which means the data sets whose size is beyond the ability of current technology, method and theory to capture, manage, and process the data within a tolerable elapsed time [3]. In order to enhance the MRS accuracy, we need to collect large volume data sets about who and when watched the micro-video, how many times the micro-video on demanded, and how many people love the micro-video. Therefore, the MRS, proposing in this paper, use the Big Data
+technology to process the collected data sets.
+
+
+
+Existing System:
+With the development of the Internet and social networking service, the micro-video is becoming more popular, especially for younger’s. For many users, they spend a lot of time to get their favorite micro-videos from amounts videos on the Internet. For the micro-video producers, they do not know What kinds of viewers like their products.
+Traditional recommendation algorithms include content-based recommendation, collaboration recommendation algorithms, and so on. At the Big Data times, the challenges what we meet are data scale, performance of computing, and other aspects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Proposed System:
+The proposed system improves the traditional recommendation algorithms,
+Using the popular parallel computing framework to process the Big Data. Slope one recommendation algorithm is a parallel computing algorithm based on Map Reduce and Hadoop framework which is a high performance parallel computing
+Platform.
+The core function of the system is the recommendation algorithms. The commonly recommendation algorithms are suite for tradition data sets, such as content-based
+Recommendation, collaboration recommendation, and so on.
+However, with the development of Big Data, the recommendation algorithms should have the ability to deal with the Big Data. The Slope one algorithm is a Big Data recommendation algorithm based on Hadoop framework. The Map Reduce programming model is based on Hadoop framework, which can process Big Data. Thus, this paper use Map Reduce programming model to implement the Slope one
+Algorithm.
+
+
+
+
+
+
+
+
+
+
+Architecture diagram:
+
+ 
+HARDWARE & SOFTWARE REQUIRMENT
+
+
+H/W System Configuration:-
+
+Processor               	-    Dual Core
+Speed                                -    1.1 G Hz
+RAM                                 -    512 MB (min)
+Hard Disk                          -   20 GB
+Key Board                         -    Standard Windows Keyboard
+Mouse                                -    Two or Three Button Mouse
+
+S/W System Configuration:-
+
+Operating System 	: 	Windows xp,7,8	
+Front End                    :  	Java 7
+Technology		:           Core Java, Hadoop
+IDE			:   	Cloud Era
+Database 		:           Oracle 10g  
+
+
+
+
+
